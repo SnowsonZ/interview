@@ -1,0 +1,66 @@
+#yin-yang {
+    width: 96px;
+    height: 48px;
+    background: #eee;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+}
+
+#yin-yang:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #eee;
+    border: 18px solid red;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+}
+
+#yin-yang:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: red;
+    border: 18px solid #eee;
+    border-radius:100%;
+    width: 12px;
+    height: 12px;
+}
+
+.wrap {
+    background-color: #d66464
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block
+}
+
+.left {
+    float: left;
+    width: 100px;
+    background: #00f;
+    height: 180px
+}
+
+.right {
+    float: right;   
+    width: 150px;
+    background: #0f0;
+    height: 200px
+}
+
+.center {
+    /*float: left;        float元素的width：auto是包裹内容的 */
+    background: #ffffff;
+    margin-left: 110px;
+    margin-right: 160px;
+    height: 150px
+}

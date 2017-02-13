@@ -1,0 +1,36 @@
+.wrap {
+    margin-left: 100px;
+    margin-right: 150px;
+    background-color: #d66464
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block
+}
+
+.left {
+    float: left;
+    width: 100px;
+    background: #00f;
+    height: 180px;
+    margin-left: calc(-100% - 100px)
+}
+
+.right {
+    float: right;   
+    width: 150px;
+    background: #0f0;
+    height: 200px;
+    margin-right: -150px;
+    /*margin-bottom: -20     元素尺寸减小，eg父元素高由子元素高而定，子元素设置mb = -20px，则父元素高较小20px*/
+}
+
+.center {
+    /*float: left;        float元素的width：auto是包裹内容的 */
+    background: #b373da;
+    height: 150px;
+    float: left;
+    width: 100%
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        .container {
+            height: 210px;
+            width: 460px;
+            border: 5px solid #000;
+        }
+        
+        ul {
+            height: 210px;
+            overflow: hidden;
+            margin-right: -20px;   /*左右的margin会使元素的宽度变大*/
+        }
+        /*一个负的margin-right,相当于把ul的宽度增加了20px*/
+        
+        li {
+            height: 100px;
+            width: 100px;
+            background: #09F;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .area {
+            margin-top: 20px;
+            height: 200px;
+            max-width: 800px;
+        }
+        .area1 {
+            margin-right: -100px;
+            width: 200px;
+            background-color: #f00;
+            float: left;
+            height: 180px;
+        }
+        .area2 {
+            margin-right: -100px;
+            width: 200px;
+            background-color: #0f0;
+            float: left;
+            height: 180px;
+        }
+        .area3 {
+            margin-right: -100px;
+            width: 200px;
+            background-color: #00f; 
+            float: left;
+            height: 180px;
+            margin-left: -200px;
+        }
+
+        .absolute_margin {
+            padding: 0;
+            margin: 0;
+        }
+
+        .absolute_div {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--左右负边距对元素宽度影响，增大元素的宽度，前提是该元素的width为auto或没有声明-->
+    <div class="container">
+        <ul>
+            <li>子元素1</li>
+            <li>子元素2</li>
+            <li>子元素3</li>
+            <li>子元素4</li>
+            <li>子元素5</li>
+            <li>子元素6</li>
+            <li>子元素7</li>
+            <li>子元素8</li>
+        </ul>
+    </div>
+    <!--负margin对浮动元素尺寸影响与对普通文档流的元素类似，减小元素的布局尺寸，实际尺寸不变-->
+    <div class="area">
+        <div class="area1">元素1</div>
+        <div class="area2">元素2</div>
+        <div class="area3">元素3</div>
+    </div>
+
+    <div style="width: 400px;margin-top: 20px;height: 100px;">
+        <div style="background-color: #444; height: 100px;"></div>
+    </div>
+    <!--负边距对绝对定位元素影响，绝对定位的元素定义的top、right、bottom、left等值是元素自身的边界到最近的已定位的祖先元素的距离，
+    这个元素自身的边界指的就是margin定义的边界，所以，如果margin为正的时候，那它的边界是向外扩的，如果margin为负的时候，则它的边界
+    是向里收的。利用这点，就有了经典的利用绝对定位来居中的方法：-->
+    <div class="absolute_margin">
+        <div class="absolute_div"></div>
+    </div>
+</body>
+
+</html>
