@@ -12,20 +12,21 @@ const UniqueID = Sup => class extends Sup {
     }
 }
 
-const Immutable = Sup => class extends Sup{
-    constructor(...args){
+const Immutable = Sup => class extends Sup {
+    constructor(...args) {
         super(...args);
         Object.freeze(this);
     }
 }
 
-const NumberArray = (function() {
+const NumberArray = (function () {
     let sumTable = [];
     return class extends Immutable(UniqueID(Array)) {
         sumRange(i, j) {
-            if(!sumTable[this.id]) {
-                let table = [0], sum = 0;
-                for(let i = 0; i < this.length; i++) {
+            if (!sumTable[this.id]) {
+                let table = [0],
+                    sum = 0;
+                for (let i = 0; i < this.length; i++) {
                     sum += this[i];
                     table.push(sum);
                 }
@@ -37,5 +38,4 @@ const NumberArray = (function() {
     }
 })();
 
-new NumberArray(1,2,3,4,5,6,7,8,-1,-4,-5).sumRange(0,3);
-
+new NumberArray(1, 2, 3, 4, 5, 6, 7, 8, -1, -4, -5).sumRange(0, 3);
