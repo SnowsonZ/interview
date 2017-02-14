@@ -1,0 +1,15 @@
+.inline_block {
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 8px;
+    background: #ad4537;
+    font-size: 14px;
+    border: solid #0f0;
+    vertical-align: middle
+}
+
+.wrapper {
+    /*inline-block默认会有4px左右空隙，去除*/
+    font-size: 0;
+    letter-spacing: -4px;
+}
