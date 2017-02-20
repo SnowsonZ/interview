@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .root {
+            display: inline-block;
+            border: 2px solid #666;
+            border-radius: 6px;
+            padding: 10px 4px;
+        }
+        
+        .icon-item {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 6px;
+        }
+        
+        .icon-cart {
+            background: url('more_btn_car_n.png');
+        }
+        
+        .icon-order {
+            background: url('more_btn_order_n.png');
+        }
+        
+        .red-circle {
+            float: right;
+            position: relative;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #f00;
+            top: -10px;
+            right: -6px;
+            font-size: 10px;
+            font-style: normal;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .root div a {
+            position: relative;
+            bottom: 8px;
+            font-style: normal;
+            font-size: 14px;
+        }
+        
+        .root>div {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div>
+            <span class="icon-item icon-cart">
+            <i class="red-circle">10</i>
+        </span>
+            <a>购物车</a>
+        </div>
+        <div>
+            <span class="icon-item icon-order">
+            <i class="red-circle">10</i>
+        </span>
+            <a>订单</a>
+        </div>
+    </div>
+</body>
+
+</html>
