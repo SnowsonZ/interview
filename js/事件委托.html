@@ -1,0 +1,81 @@
+<!--组件的事件响应交给其父组件-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul {
+            border: 1px solid #000;
+        }
+        
+        li {
+            height: 36px;
+            text-align: center;
+            list-style-type: none;
+            border: 1px solid #000;
+            line-height: 36px;
+        }
+        
+        li:last-child {
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body onload="onStart()">
+    <div>
+        <button id="add" value="添加li">添加li</button>
+    </div>
+    <div>
+        <ul class="container">
+            <li><span>one</span></li>
+            <li><span>three</span></li>
+            <li><span>three</span></li>
+            <li><span>three</span></li>
+            <li><span>three</span></li>
+        </ul>
+    </div>
+    <script>
+        function onStart() {
+            var container = document.querySelector('.container');
+            var btn_add = document.querySelector('#add');
+            var first_div = document.querySelector('div');
+
+            container.onmouseover = function (ev) {
+                //拿到事件源对象
+                let src = ev || window.event;
+                let target = src.target || src.srcElement;
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.background = 'red';
+                }
+            }
+
+            container.onmouseout = function (ev) {
+                let src = ev || window.event;
+                let target = src.target || src.srcElement;
+                if (target.nodeName.toLowerCase() == "li") {
+                    target.style.background = '';
+                }
+            }
+
+            btn_add.onclick = function (ev) {
+                // let span = document.createElement('span');
+                // span.innerHTML = 'new Item';
+                let item = document.createElement('li');
+                item.innerHTML = '<span>new Item</span>'
+                // item.appendChild(span);
+                container.insertBefore(item, container.childNodes[0]);
+                // ev.stopPropagation(); //阻止事件冒泡
+                console.log(item.innerText);
+            }
+
+            first_div.onclick = function (ev) {
+                console.log('body.onclick!!!');
+            }
+        }
+    </script>
+</body>
+
+</html>
