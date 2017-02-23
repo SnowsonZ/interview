@@ -1,12 +1,12 @@
 //parent class
 function Animal(name) {
     this.name = name || 'Animal';
-    this.sleep = function() {
-
+    this.sleep = function () {
+        console.log(this.name + 　'睡了');
     }
 }
 
-Animal.prototype.eat = function(food) {
+Animal.prototype.eat = function (food) {
     console.log(this.name + '正在吃' + food);
 }
 
@@ -41,3 +41,80 @@ function Cat(name) {
 }
 
 let cat = new Cat('cat');
+
+/**
+ * 3. 实例继承
+ * 缺点: 1. 父类实例而非子类实例
+ *       2. 无法多继承 
+ */
+
+function Cat(name) {
+    let instance = new Animal();
+    this.name = name || 'tom';
+
+    return instance;
+}
+
+/**
+ * 4. 拷贝继承
+ * 特点: 支持多继承
+ * 缺点: 1. 无法获取父类不可枚举的方法
+ *       2. 效率低，内存占用高
+ * 
+ */
+
+function Cat(name) {
+    let animal = new Animal();
+    for (let p in animal) {
+        Cat.prototype[p] = animal[p];
+    }
+    Cat.prototype.name = name || 'tom';
+}
+
+let cat = new Cat('cat');
+console.log(cat.name);
+console.log(cat.sleep());
+console.log(cat.eat('fishes'));
+
+/**
+ * 5. 组合继承
+ * 特点: 1. 同时继承实例属性方法和原型方法
+ *       2. 既是子类实例，又是父类实例
+ *       3. 不存在引用属性公用问题
+ *       4. 函数可复用
+ * 缺点: 调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）
+ */
+
+function Cat(name) {
+    Animal.call(this, name);
+    this.name = name || 'tom cat';
+}
+
+Cat.prototype = new Animal();
+
+let cat = new Cat('mouse cat');
+
+console.log(cat.name);
+console.log(cat.sleep());
+console.log(cat.eat('fishes'));
+
+/**
+ * 6. 寄生组合继承
+ */
+
+function Cat(name) {
+    Animal.call(this, name);
+    this.name = name || 'tom';
+}
+
+(function () {
+    let Super = function () {}
+    Super.prototype = new Animal();
+    Cat.prototype = new Super();
+})();
+
+let cat = new Cat('mouse cat');
+
+console.log(cat.name);
+console.log(cat.sleep());
+console.log(cat.eat('fishes'));
