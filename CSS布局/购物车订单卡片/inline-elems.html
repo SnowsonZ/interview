@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+        body {
+            font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
         .root {
             display: inline-block;
             border: 2px solid #666;
@@ -52,6 +55,25 @@
         .root>div {
             margin: 20px;
         }
+
+        .header>div {
+            display: inline-block;
+            text-align: center
+        }
+        
+        .header div span {
+            display: block;
+        }
+
+        .progress {
+            height: 30px;
+            width: 200px;
+        }
+
+        .progress div {
+            height: 2px;
+            background: #ccc;
+        }
     </style>
 </head>
 
@@ -68,6 +90,19 @@
             <i class="red-circle">10</i>
         </span>
             <a>订单</a>
+        </div>
+    </div>
+    <div class="header">
+        <div>
+            <span style="font-size: 14px">北京</span>
+            <span style="font-size: 16px;font-weight: bold">DEL</span>
+        </div>
+        <div class="progress">
+            <div></div>
+        </div>
+        <div>
+            <span style="font-size: 14px">杭州</span>
+            <span style="font-size: 16px;font-weight: bold">EGT</span>
         </div>
     </div>
 </body>
