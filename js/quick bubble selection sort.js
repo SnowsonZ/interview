@@ -1,24 +1,34 @@
 //快速排序
 function quickSort(array) {
 
-    if (array.length <= 1) {
-        return array;
-    }
+    function sort(start, end) {
 
-    //设置参考值
-    let key = array[0];
-    let leftArray = [];
-    let rightArray = [];
+        let unique = start;  //关键字的位置,默认从数组的第一个元素起, i -> j, 从左到右
+        let flag = array[unique]; //关键字   
+        let back = end - 1;   //  j -> i    从右到左
+        if(end - start > 1) {
+            while(unique < back) {
+                for(; unique < back; back--) {
+                    if(array[back] < flag) {
+                        array[unique++] = array[back];
+                        break;
+                    }
+                }
 
-    for (let i = 1; i < array.length; i++) {
-        if (array[i] > key) {
-            rightArray.push(array[i]);
-        } else {
-            leftArray.push(array[i]);
+                for(; unique < back; unique++) {
+                    if(array[unique] > flag) {
+                        array[back--] = array[unique];
+                        break;
+                    }
+                }
+            }
+            array[unique] = flag;
+            sort(0, unique);
+            sort(unique + 1, end);
         }
     }
-
-    return [].concat(quickSort(leftArray), key, quickSort(rightArray));
+    sort(0, array.length);
+    return array;
 }
 
 //冒泡排序
@@ -65,7 +75,7 @@ function selectionSort(array) {
     return array;
 }
 
-let array = [8, 4, 10, 30, 9, 3, 1, 5, 3];
+let array = [2, 43, 4, 12, 76, 43, 9, 1, 25, 67, 53, 7];
 
 console.log(quickSort(array));
 console.log(bubbleSort(array));
