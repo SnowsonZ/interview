@@ -1,9 +1,9 @@
 function poll(...fnList) {
     let currentIndex = 0;
 
-    return function (...args) {
+    return function () {
         let fn = fnList[currentIndex++ % fnList.length];
-        return fn.apply(null, args);
+        return fn.apply(null);
     }
 }
 

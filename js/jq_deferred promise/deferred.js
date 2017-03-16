@@ -1,5 +1,5 @@
-var dtd = $.Deferred();
-var wait = function (dtd) {
+var wait = function () {
+    var dtd = $.Deferred();
     var task = function () {
         console.log('执行完毕');
         dtd.resolve('complete!!!');
