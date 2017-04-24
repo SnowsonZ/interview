@@ -1,0 +1,37 @@
+$fontSize: 16px;
+$color: #000;
+
+div {
+    p {
+        color: #ff0;
+        a {
+            background: #943
+        }
+    }
+}
+
+@function toRem($px) {
+    
+    @return $px / 640 * 16rem;
+}
+
+@mixin nav {
+    .nav {
+
+    }
+}
+
+@mixin title {
+    .title {
+
+    }
+}
+
+@mixin footer {
+    .footer {
+        
+    }
+}
+
+
+

@@ -1,0 +1,7 @@
+@import './test';
+
+.g-index {
+    @include nav;
+    @include title;
+    @include footer;
+}
