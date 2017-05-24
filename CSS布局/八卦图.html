@@ -7,9 +7,18 @@
     <link href="index.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="start()">
     <div id="yin-yang"></div>
     <div id="button">button</div>
+    <div id="halfofcircle"></div>
+
+    <script>
+        function start() {
+            document.getElementById('button').addEventListener('click', function() {
+                console.log('click it!!');
+            });
+        }
+    </script>
 </body>
 
 </html>
