@@ -65,3 +65,44 @@
     margin-right: 160px;
     height: 150px
 }
+
+#button {
+    
+    margin-top: 20px;
+    position: relative;
+    width: 120px;
+    height: 50px;
+    background: #000;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+}
+
+#button:after {
+    content: '';
+    float: right;
+    width: 10px;
+    height: 20px;
+    background: white;
+    margin-top: 15px;
+    border-radius: 10px 0 0 10px;
+}
+
+#button:before {
+    content: '';
+    float: left;
+    width: 10px;
+    height: 20px;
+    background: white;
+    margin-top: 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+#halfofcircle {
+    margin-top: 20px;
+    background: #000;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px 0 0 25px
+}
+
