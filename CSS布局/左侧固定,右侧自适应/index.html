@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左侧定宽，右侧自适应宽度</title>
+    <style>
+        .sideNav1 {
+            height: 100px;
+            width: 200px;
+            float: left;
+            background-color: red;
+        }
+
+        .content1 {
+            height: 200px;
+            margin-left: 200px;
+            background-color: blue;
+        }
+
+        .footer1 {
+            background-color: green;
+            height: 100px;
+            margin-top: 30px;
+        }
+
+        .sideNav2 {
+            height: 100px;
+            width: 200px;
+            float: left;
+            margin-right: -200px;
+            background-color: red;
+        }
+
+        .container {
+            background: pink;
+        }
+
+        .content2 {
+            height: 200px;
+            margin-left: 200px;
+            background-color: blue;
+        }
+
+        .footer2 {
+            background-color: green;
+            height: 100px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="sideNav1">侧边栏</div>
+        <div class="content1">内容</div>
+    </div>
+    <div class="footer1">footer</div>
+
+    <div style="margin-top: 50px;">
+        <div class="sideNav2">侧边栏</div>
+        <div class="container">
+            <div class="content2">内容</div>
+        </div>
+    </div>
+    <div class="footer2">footer</div>
+</body>
+
+</html>
