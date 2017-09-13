@@ -1,0 +1,13 @@
+实例的[ProtoType] ->构造函数的原型对象
+构造函数原型对象构成 {
+	构造函数中定义的属性和方法
+	constructor属性
+	[构造函数作为实例的[ProtoType]]__proto__ ->构造函数的原型对象（原型链）
+}
+hasOwnProperty() ----判断该属性是否属于实例属性   实例属性 return true    原型属性 return false
+
+Object.getOwnPropertyDescriptor(object{实例对象/原型对象}, property) --> 获得属性的描述符{获取原型属性的描述符需要使用原型对象}（configurable, enumerable, value, writable）
+
+可以替换 for...in（可枚举的实例+原型属性）的方法
+Object.keys(object) --> 获取对象的可枚举的实例属性
+Object.getOwnPropertyNames(object) --> 获取所有实例属性，包括不可枚举

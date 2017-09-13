@@ -1,0 +1,13 @@
+类数组遍历
+ES5
+forEach   value的遍历
+map  key,value 遍历
+ES6
+entries key,value遍历
+keys key遍历
+values value遍历
+
+遍历对象属性
+for...in循环：只遍历对象自身的和继承的可枚举的属性
+Object.keys()：返回对象自身的所有可枚举的属性的键名
+JSON.stringify()：只串行化对象自身的可枚举的属性
